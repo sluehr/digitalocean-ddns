@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+  do-ddns:
+    image: sluehr/digitalocean-ddns
+    deploy:
+      restart_policy:
+        condition: unless-stopped
+    environment:
+      DO_API_TOKEN: 'my-api-token-here'
+      DO_DOMAIN: 'example.com'
+      DO_RECORD: 'subdomain'

@@ -4,9 +4,9 @@ import logging
 import os
 import requests
 
-REQUIRED_ENV_VARIABLES = ['DO_API_TOKEN', 'DO_DOMAIN', 'DO_RECORD']
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-for var in REQUIRED_ENV_VARIABLES:
+for var in ['DO_API_TOKEN', 'DO_DOMAIN', 'DO_RECORD']:
     if var not in os.environ:
         raise EnvironmentError(f"Environment variable {var} not set.")
 
